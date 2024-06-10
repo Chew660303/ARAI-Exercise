@@ -168,6 +168,7 @@ def app():
     st.title("Push Up Exercise")
     remind_text = "**Make sure to allow access of your camera and speaker. Refresh the website if there is a lag.**"
     st.markdown(remind_text)
+    st.image('pushup_angle.png')
     remark_text = "**Perfect angle for a push up is more than 160 degree of your straightened arms. Make sure to show your front upper body during a push up to a webcam.**"
     st.markdown(remark_text)
 
