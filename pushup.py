@@ -49,7 +49,6 @@ def calculate_angle(a, b, c):
 
     return int(angle)
 
-@st.cache(allow_output_mutation=True, max_entries=10, ttl=3600)
 class VideoProcessor:
     def __init__(self):
         self.pose = mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5)
