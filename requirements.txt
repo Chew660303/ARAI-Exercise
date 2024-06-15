@@ -5,3 +5,5 @@ numpy
 gtts
 mediapipe
 av
+os
+twilio
