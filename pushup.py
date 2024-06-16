@@ -193,9 +193,9 @@ def app():
     rtc_configuration=RTCConfiguration(
         {"iceServers": [
             {
-                "urls": ["turn:47.120.40.60:3478"],
-                "username": "qiteam",
-                "credential": "qiteamuestc"
+                "urls": ["turn:relay1.expressturn.com:3478"],
+                "username": "efXW0R2IGNG6EHEBZ9",
+                "credential": "bLGIR2pxFRFc09g8"
             }
         ]}
     ),
