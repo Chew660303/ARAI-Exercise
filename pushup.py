@@ -166,10 +166,10 @@ class VideoProcessor:
 def app():
     st.set_page_config(layout="wide")
     st.title("Push Up Exercise")
-    remind_text = "**Make sure to allow access of your camera and speaker. Refresh the website if there is a lag.**"
+    remind_text = "**Make sure to allow access of your camera and speaker. Kindly wait a while for the webcam to open. Refresh the website if there is a lag.**"
     st.markdown(remind_text)
     st.image('pushup_angle.png')
-    remark_text = "**Perfect angle for a push up is more than 160 degree of your straightened arms. Make sure to show your front upper body during a push up to a webcam.**"
+    remark_text = "**Perfect angle for a pushup is more than 160 degree of your straightened arms. Make sure to show your front upper body during a pushup to a webcam.**"
     st.markdown(remark_text)
     
     webrtc_ctx = webrtc_streamer(
