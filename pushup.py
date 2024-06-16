@@ -171,6 +171,31 @@ def app():
     st.image('pushup_angle.png')
     remark_text = "**Perfect angle for a push up is more than 160 degree of your straightened arms. Make sure to show your front upper body during a push up to a webcam.**"
     st.markdown(remark_text)
+    
+    webrtc_ctx = webrtc_streamer(
+    key="full-body-detection",
+    video_processor_factory=VideoProcessor,
+    rtc_configuration=RTCConfiguration(
+        {"iceServers": [
+            {
+                "urls": ["turn:relay1.expressturn.com:3478"],
+                "username": "efXW0R2IGNG6EHEBZ9",
+                "credential": "bLGIR2pxFRFc09g8"
+            },
+            {
+                "urls": ["stun:stun.l.google.com:19302"]
+            }
+        ]}
+    ),
+    media_stream_constraints={"video": {"frameRate": {"ideal": 15}}, "audio": False},
+    video_html_attrs={
+        "style": {"width": "50%", "margin": "0 auto", "border": "5px purple solid"},
+        "controls": False,
+        "autoPlay": True,
+    },
+    async_processing=True,
+)
+
 
 #     webrtc_ctx = webrtc_streamer(
 #     key="full-body-detection",
@@ -187,26 +212,26 @@ def app():
 #     async_processing=True,
 # )
 
-    webrtc_ctx = webrtc_streamer(
-    key="full-body-detection",
-    video_processor_factory=VideoProcessor,
-    rtc_configuration=RTCConfiguration(
-        {"iceServers": [
-            {
-                "urls": ["turn:relay1.expressturn.com:3478"],
-                "username": "efXW0R2IGNG6EHEBZ9",
-                "credential": "bLGIR2pxFRFc09g8"
-            }
-        ]}
-    ),
-    media_stream_constraints={"video": {"frameRate": {"ideal": 15}}, "audio": False},
-    video_html_attrs={
-        "style": {"width": "50%", "margin": "0 auto", "border": "5px purple solid"},
-        "controls": False,
-        "autoPlay": True,
-    },
-    async_processing=True,
-)
+#     webrtc_ctx = webrtc_streamer(
+#     key="full-body-detection",
+#     video_processor_factory=VideoProcessor,
+#     rtc_configuration=RTCConfiguration(
+#         {"iceServers": [
+#             {
+#                 "urls": ["turn:relay1.expressturn.com:3478"],
+#                 "username": "efXW0R2IGNG6EHEBZ9",
+#                 "credential": "bLGIR2pxFRFc09g8"
+#             }
+#         ]}
+#     ),
+#     media_stream_constraints={"video": {"frameRate": {"ideal": 15}}, "audio": False},
+#     video_html_attrs={
+#         "style": {"width": "50%", "margin": "0 auto", "border": "5px purple solid"},
+#         "controls": False,
+#         "autoPlay": True,
+#     },
+#     async_processing=True,
+# )
 
 
     video_processor = VideoProcessor()
